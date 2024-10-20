@@ -1,0 +1,32 @@
+.card-food {
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  transition: box-shadow 0.3s ease;
+}
+
+.card-food:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.food-item {
+  border-radius: 8px;
+  max-width: 100%;
+  height: auto;
+}
+
+.fa-heart-o {
+  cursor: pointer;
+  color: #ff4081; /* Heart icon color */
+}
+
+.fa-star-half-o {
+  color: #f39c12; /* Star icon color */
+}
+
+h4 {
+  font-weight: bold;
+}
+
+small {
+  color: #777;
+}

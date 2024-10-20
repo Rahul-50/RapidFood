@@ -1,0 +1,87 @@
+<div class="container mt-4">
+  <div class="row" *ngFor="let resto of matchingRestaurants">
+    <div class="col-12">
+      <div class="card restaurant-card p-3">
+        <div class="row align-items-center">
+          <div class="col-6">
+            <h4 class="restaurant-name">{{resto.restoName}}</h4>
+            <p class="restaurant-address">{{resto.address}}</p>
+            <span class="restaurant-type">Veg | Non-Veg</span>
+          </div>
+          <div class="col-6 text-right">
+            <p class="restaurant-rating">
+              <i aria-hidden="true" class="fa fa-clock-o"></i>
+            </p>
+            <p class="restaurant-phone">1166554488</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Menu Section -->
+    <div class="col-8 mt-4">
+      <div class="row">
+        <h5>Menu</h5>
+      </div>
+      <div class="row pt-3">
+        <div class="col-4" *ngFor="let type of resto.types"> <!-- Loop through the food types of each restaurant -->
+          <div class="card card-food">
+            <div class="card-body">
+              <div class="row align-items-center">
+                <div class="col-4">
+                  <img alt="{{type.type}}" class="card-img-top food-item" [src]="type.imgurl">
+                </div>
+                <div class="col-8 text-right">
+                  <h6>{{type.type}}</h6>
+                  <i aria-hidden="true" class="fa fa-star-half-o"></i>
+                </div>
+              </div>
+              <div class="row align-items-center">
+                <div class="col-6">
+                  <h5><i aria-hidden="true" class="fa fa-inr"></i> ₹{{type.price}}</h5>
+                </div>
+                <div class="col-6 text-right">
+                  <button (click)="onadditem(type)" class="btn btn-sm btn-success">
+                    <i aria-hidden="true" class="fa fa-plus"></i>+Add
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-4 mt-4">
+      <div class="row">
+        <div class="col-6">
+          <h6>Items Added</h6>
+        </div>
+        <div class="col-6 text-right">
+          <h6 class="text-muted" (click)="addedItems=[]">Clear All</h6>
+        </div>
+      </div>
+
+      <div class="col-12 text-center">
+        <div *ngIf="addedItems.length > 0; else emptyCart" class="mt-3">
+          <div *ngFor="let item of addedItems; let i = index"
+            class="d-flex justify-content-between align-items-center mb-2">
+            <h5 class="m-0">{{ item.name }}</h5>
+            <div class="d-flex align-items-center">
+              <h6 class="m-0">Price: <i class="fa fa-inr"></i>₹ {{ item.price }}</h6>
+              <button class="btn btn-sm btn-danger ml-2" (click)="removeItem(i)">
+                Remove
+              </button>
+            </div>
+          </div>
+          <div class="mt-3">
+            <h6>Total Price: <i class="fa fa-inr"></i>₹ {{ totalPrice }}</h6>
+            <button class="btn btn-success">Place Order</button>
+          </div>
+        </div>
+
+        <ng-template #emptyCart>
+          <h5 class="mt-5">Food Cart Empty</h5>
+        </ng-template>
+      </div>
+    </div>

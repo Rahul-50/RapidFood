@@ -1,0 +1,31 @@
+.restaurant-card{
+  background-color: #ef4f5f !important;
+  color: #fff;
+  box-shadow: 5px 4px 8px #0000001a;
+}
+.card {
+  border: none;
+  transition: transform .2s;
+}
+.p-2 {
+  padding: .5rem !important;
+}
+.card {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, .125);
+  border-radius: .25rem;
+}
+*, ::after, ::before {
+  box-sizing: border-box;
+}

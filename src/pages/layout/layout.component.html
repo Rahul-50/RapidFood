@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light navs">
+  <a routerLink="/foodcategory" class="navbar-brand">
+    <img
+      src="https://w7.pngwing.com/pngs/269/964/png-transparent-pizza-delivery-restaurant-online-food-ordering-fast-delivery-food-logo-car.png"
+      alt="Food Delivery Logo" style="width: 70px;">
+  </a>
+  <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div id="navbarSupportedContent" class="collapse navbar-collapse">
+    <ul class="navbar-nav mr-auto"></ul>
+    <form novalidate class="form-inline my-2 my-lg-0">
+      <a routerLink="/login" class="btn btn-outline-success my-2 my-sm-0">Login</a>
+    </form>
+  </div>
+</nav>
+
+<div class="container mt-5">
+  <br/>
+
+  <router-outlet></router-outlet>
+  <br/>
+  <br/>
+  <br/>
+</div>
+
+<footer class="footer  bg-dark text-light ">
+  <div class="container text-center">
+    <p class="mb-0">&copy; 2024 Rapid Food Item List. All rights reserved.</p>
+    <!-- <ul class="list-inline mt-2">
+      <li class="list-inline-item">
+        <a class="text-light">Privacy Policy</a>
+      </li>
+      <li class="list-inline-item">
+        <a class="text-light">Terms of Service</a>
+      </li>
+      <li class="list-inline-item">
+        <a class="text-light">Contact Us</a>
+      </li>
+    </ul> -->
+  </div>
+</footer>
