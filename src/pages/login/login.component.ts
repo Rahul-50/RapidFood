@@ -1,5 +1,6 @@
+import { DataService } from './../../Services/data.service';
 import { Router } from '@angular/router';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -10,16 +11,20 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
-  constructor(private router: Router) { }
-  userobj: any = {
-    userdata: '',
-    Email: '',
-    password: '',
-    Confirmpassword: ''
-  }
-  onlogin(item: any) {
+  DataServ = inject(DataService)
+  userdata: any;
 
-    if ('admin' === this.userobj.userdata && 'admin' === this.userobj.password) {
+  constructor(private router: Router) { }
+  // userobj: any = {
+  //   userdata: '',
+  //   Email: '',
+  //   password: '',
+  //   Confirmpassword: ''
+  // }
+
+  onlogin(item: any) {
+    this.userdata = this.DataServ.userobj
+    if ('admin' === this.userdata.userdata && 'admin' === this.userdata.password) {
       this.router.navigateByUrl('/foodcategory')
     } else {
       alert(' invalid Credintioals !')

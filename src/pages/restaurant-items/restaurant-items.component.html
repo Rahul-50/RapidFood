@@ -1,12 +1,14 @@
 <div class="container mt-5">
   <div class="row">
     <div class="col-4" *ngFor="let restaurant of matchingRestaurants">
-      <div class="card card-food" (click)="onselectItem(restaurant.restoName)">
+      <div class="card card-food" (click)="onselectItem(restaurant.restoName,foodimgurl)">
         <div class="card-body">
           <div class="row">
             <div class="col-5">
               <img alt="{{ restaurant.Name }}" class="card-img-top food-item"
                [src]="foodimgurl" >
+               <!-- [src]="restaurant.imgUrl" > -->
+
             </div>
             <div class="col-7 text-right">
               <i class="fa fa-heart-o" aria-hidden="true"></i>

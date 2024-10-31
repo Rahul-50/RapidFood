@@ -17,46 +17,31 @@ export class RestaurantItemsComponent implements OnInit {
   route = inject(Router);
   matchingRestaurants: any[] = [];
   // Define your hotelsName array
-  hotelsName: any[] = [
-    { Name: 'Pizza', restoName: 'Dominos Pizza' },
-    { Name: 'Pizza', restoName: 'Pizza Hut' },
-    { Name: 'Pizza', restoName: 'KINGS BAKES' },
-    { Name: 'Burger', restoName: 'McDonalds' },
-    { Name: 'Burger', restoName: 'Burger King' },
-    { Name: 'Burger', restoName: 'Fat Burger' },
-    { Name: 'Sandwich', restoName: 'Subway' },
-    { Name: 'Sandwich', restoName: 'Quiznos' },
-    { Name: 'Dosa', restoName: 'Dosa Plaza' },
-    { Name: 'Paneer', restoName: 'Paneer Paradise' },
-    { Name: 'Chicken', restoName: 'KFC' },
-    { Name: 'Rice', restoName: 'Rice Bowl' },
-    { Name: 'Cake', restoName: 'Cake Corner' },
-    { Name: 'North Indian', restoName: 'Punjabi Kitchen' },
-    { Name: 'Samosa', restoName: 'Samosa Junction' },
-    { Name: 'Biryani', restoName: 'Biryani Express' },
-    { Name: 'Noodles', restoName: 'Noodle House' },
-    { Name: 'Maggie', restoName: 'Maggie Point' },
-    { Name: 'Pasta', restoName: 'Pasta Palace' },
-    { Name: 'Pasta', restoName: 'Pasta Point' },
-  ];
-
+  hotelsName: any;
+  itemnotFound: any[] = [{
+    'msg': 'This item is not available 😒'
+  }];
 
 
   ngOnInit() {
-    debugger;
+    // debugger;
+    this.hotelsName = this.dataservice.hotelsName;
     this.foodName = this.dataservice.senddata;
     this.foodimgurl = this.dataservice.imgurl
-    debugger;
+    // debugger;
     // this.routes.paramMap.subscribe(params => {
     //   this.foodName = params.get('name');
     //   console.log(this.foodName);
     //   debugger;
     this.matchingRestaurants = this.hotelsName.filter((hotel: { Name: string; }) => hotel.Name.toLowerCase() === this.foodName?.toLowerCase());
     // });
+    //  this.matchingRestaurants = this.matchingRestaurants.length > 0 ? this.matchingRestaurants : this.itemnotFound;
+
   }
 
-  onselectItem(item: any) {
-    debugger;
+  onselectItem(item: any, url: any) {
+    // debugger;
+    this.dataservice.imgurl = url;
     this.dataservice.restoName = item;
     this.route.navigateByUrl('create-order');
   }

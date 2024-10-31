@@ -5,20 +5,20 @@
 			<div class="signup">
 				<form>
 					<label for="chk" aria-hidden="true">Sign up</label>
-					<input type="text" [(ngModel)]="userobj.userdata" name="txt" placeholder="User name" required="">
-					<input type="email" [(ngModel)]="userobj.Email" name="email" placeholder="Email" required="">
-          <input type="password" [(ngModel)]="userobj.password" name="broj" placeholder="password" required="">
-					<input type="password" [(ngModel)]="userobj.Confirmpassword" name="pswd" placeholder="Confirm Password" required="">
-					<button (click)="onsignin(userobj)">Sign up</button>
+					<input type="text" [(ngModel)]="userdata.userdata" name="txt" placeholder="User name" required="">
+					<input type="email" [(ngModel)]="userdata.Email" name="email" placeholder="Email" required="">
+          <input type="password" [(ngModel)]="userdata.password" name="broj" placeholder="password" required="">
+					<input type="password" [(ngModel)]="userdata.Confirmpassword" name="pswd" placeholder="Confirm Password" required="">
+					<button (click)="onsignin(userdata)">Sign up</button>
 				</form>
 			</div>
 
 			<div class="login">
 				<form>
 					<label for="chk" aria-hidden="true">Login</label>
-					<input type="email" [(ngModel)]="userobj.userdata" name="txt" placeholder="User name    " required="">
-					<input type="password" [(ngModel)]="userobj.password" name="pswd" placeholder="Password" required="">
-					<button (click)="onlogin(userobj)">Login</button>
+					<input type="email" [(ngModel)]="userdata.userdata" name="txt" placeholder="User name    " required="">
+					<input type="password" [(ngModel)]="userdata.password" name="pswd" placeholder="Password" required="">
+					<button (click)="onlogin(userdata)">Login</button>
 				</form>
 			</div>
 	</div>
